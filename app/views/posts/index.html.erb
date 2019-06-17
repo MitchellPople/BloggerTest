@@ -1,11 +1,11 @@
 <h2 class="header">Welcome to Blogger</h2>
 <%= link_to "Add Post", new_post_path%>
+<%= link_to "View Users", users_path%>
 
 <%- @posts.each do |post| %>
   <div class="post_block">
     <h4><%= post.title%></h4>
     <p><%= post.summary%></p>
     <%= link_to "Click for More", post_path(post)%>
-
   </div>
 <% end %>

@@ -1,6 +1,7 @@
 <h2><%= @posts.title%></h2>
 <p><%=@posts.body%></p>
 <%= link_to "See all posts", posts_path%>
+<%= link_to "Edit post", edit_post_path%>
 <table>
     <%- @posts.comments.each do |com| %>
         <tr>
