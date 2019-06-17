@@ -1,3 +1,11 @@
 <h2><%= @posts.title%></h2>
 <p><%=@posts.body%></p>
 <%= link_to "See all posts", posts_path%>
+<table>
+    <%- @posts.comments.each do |com| %>
+        <tr>
+            <td><%= link_to com.user.username, user_path(com.user) %></td>
+            <td><%= com.content%></td>
+        </tr>
+    <% end %>
+</table>

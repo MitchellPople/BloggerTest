@@ -1,0 +1,9 @@
+<h2 class="header">Welcome to Blogger</h2>
+<%= link_to "Add Post", new_post_path%>
+
+<%- @user.each do |user| %>
+  <div class="post_block">
+    <h4><%= link_to user.username, user_path(user)%></h4>
+
+  </div>
+<% end %>
