@@ -1,4 +1,4 @@
-<h2><%= @posts.title%></h2>
+<h2><%= @posts.title%> by <%= @posts.user.username %></h2>
 <p><%=@posts.body%></p>
 <%= link_to "See all posts", posts_path%>
 <%= link_to "Edit post", edit_post_path%>
@@ -8,6 +8,7 @@
         <tr>
             <td><%= link_to com.user.username, user_path(com.user) %></td>
             <td><%= com.content%></td>
+            <td><%= link_to "Edit Comment",edit_comment_path%>
         </tr>
     <% end %>
 </table>

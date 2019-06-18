@@ -34,6 +34,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+    @post = Comment.find(params[:id]).post
+    redirect_to @post
+  end
+
   private
 
   def comment_params

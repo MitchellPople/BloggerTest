@@ -1,0 +1,6 @@
+<h2>Edit existing comment</h2>
+<%= form_for @comment do |f|%>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <br/><%= f.submit "Save Comment"%>
+<% end %>

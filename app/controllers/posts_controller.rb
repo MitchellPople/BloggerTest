@@ -8,11 +8,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    require_user
     @post = Post.find(params[:id])
-    if @post.user != nil
+    if logged_in?
       @user = @post.user
       validate_user(@user.id)
+    else
+      require_user
     end
   end
 
