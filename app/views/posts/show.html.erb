@@ -2,6 +2,7 @@
 <p><%=@posts.body%></p>
 <%= link_to "See all posts", posts_path%>
 <%= link_to "Edit post", edit_post_path%>
+<%= link_to "Create Comment", new_comment_path(:post_id => @posts.id)%>
 <table>
     <%- @posts.comments.each do |com| %>
         <tr>

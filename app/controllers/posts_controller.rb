@@ -8,7 +8,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+    require_user
     @post = Post.find(params[:id])
+    if @post.user != nil
+      @user = @post.user
+      validate_user(@user.id)
+    end
   end
 
   def update
@@ -21,11 +26,13 @@ class PostsController < ApplicationController
   end
 
   def new
+    require_user
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
       redirect_to @post, notice: 'Successfully created post'
     else

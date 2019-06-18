@@ -5,7 +5,7 @@
     <%- @user.comments.each do |comment| %>
         <tr>
             <td><%= link_to comment.post.title, post_path(comment.post) %></td>
-            <td><%= com.content%></td>
+            <td><%= comment.content%></td>
         </tr>
     <% end %>
 </table>

@@ -1,0 +1,7 @@
+<h2>Write a new comment</h2>
+<%= form_for @comment do |f|%>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :post_id, :value => params[:post_id]%>
+    <br/><%= f.submit "Save Comment"%>
+<% end %>
