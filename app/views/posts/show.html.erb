@@ -8,7 +8,7 @@
         <tr>
             <td><%= link_to com.user.username, user_path(com.user) %></td>
             <td><%= com.content%></td>
-            <td><%= link_to "Edit Comment",edit_comment_path%>
+            <td><%= link_to "Edit Comment",edit_comment_path(com)%>
         </tr>
     <% end %>
 </table>
